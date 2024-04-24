@@ -1,19 +1,19 @@
-# student_client
+先切换到 package.json所在目录，然后执行下列命令安装依赖包
 
-## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+编译并启动
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+访问登录页面
+
 ```
-npm run build
+http://localhost:8081/login
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+访问管理页面   `http://localhost:8081/admin`
