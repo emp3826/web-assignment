@@ -113,8 +113,8 @@ export default {
     return {
       activeName: "login",
       ruleForm: {
-        username: "admin",
-        password: "admin",
+        username: "",
+        password: "",
       },
       registerForm: {
         username: "",

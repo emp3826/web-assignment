@@ -16,7 +16,7 @@
         </span>
       </div>
       <div>
-        <el-tabs v-model="activeName">
+        <el-tabs v-model="activeName" >
           <el-tab-pane label="登录" name="login">
             <div
               :style="{
@@ -61,44 +61,42 @@
                 marginTop: '14px',
               }"
             >
-              <el-form
-                :model="registerForm"
-                :rules="rules"
-                ref="registerForm"
-                label-width="100px"
-                class="demo-ruleForm"
-              >
-                <el-form-item label="昵称" prop="name">
-                  <el-input
-                    v-model.number="registerForm.name"
-                    prefix-icon="el-icon-lollipop"
-                  ></el-input>
-                </el-form-item>
-                <el-form-item label="用户名" prop="username">
-                  <el-input
-                    v-model.number="registerForm.username"
-                    prefix-icon="el-icon-lollipop"
-                  ></el-input>
-                </el-form-item>
-                <el-form-item label="用户密码" prop="password">
-                  <el-input
-                    v-model="registerForm.password"
-                    placeholder="请输入密码"
-                    show-password
-                    prefix-icon="el-icon-ice-cream-round"
-                  ></el-input>
-                </el-form-item>
+            <el-form
+              :model="registerForm"
+              :rules="rules"
+              ref="registerForm"
+              label-width="100px"
+              class="demo-ruleForm"
+            >
+              <el-form-item label="昵称" prop="name">
+                <el-input
+                  v-model.number="registerForm.name"
+                  prefix-icon="el-icon-lollipop"
+                ></el-input>
+              </el-form-item>
+              <el-form-item label="用户名" prop="username">
+                <el-input
+                  v-model.number="registerForm.username"
+                  prefix-icon="el-icon-lollipop"
+                ></el-input>
+              </el-form-item>
+              <el-form-item label="用户密码" prop="password">
+                <el-input
+                  v-model="registerForm.password"
+                  placeholder="请输入密码"
+                  show-password
+                  prefix-icon="el-icon-ice-cream-round"
+                ></el-input>
+              </el-form-item>
 
-                <el-form-item>
-                  <el-button
-                    type="primary"
-                    @click="registerUser('registerForm')"
-                    >注册</el-button
-                  >
-                  <el-button @click="resetForm('registerForm')">重置</el-button>
-                  <!-- <el-button type="primary" @click="registerUser">注册</el-button> -->
-                </el-form-item>
-              </el-form>
+              <el-form-item>
+                <el-button type="primary" @click="registerUser('registerForm')"
+                  >登陆</el-button
+                >
+                <el-button @click="resetForm('registerForm')">重置</el-button>
+                <!-- <el-button type="primary" @click="registerUser">注册</el-button> -->
+              </el-form-item>
+            </el-form>
             </div>
           </el-tab-pane>
         </el-tabs>
@@ -113,8 +111,8 @@ export default {
     return {
       activeName: "login",
       ruleForm: {
-        username: "admin",
-        password: "admin",
+        username: "",
+        password: "",
       },
       registerForm: {
         username: "",
@@ -137,12 +135,7 @@ export default {
         if (valid) {
           login({ action: "register", ...this.registerForm }).then((res) => {
             console.log(res);
-            if (res.data.code === 500) {
-              this.$message.error(res.data.msg);
-            } else {
-              this.$message.success("注册成功");
-              this.$router.push("/plantList");
-            }
+        
           });
         } else {
           console.log("error submit!!");
@@ -156,11 +149,11 @@ export default {
         if (valid) {
           login({ action: "login", ...this.ruleForm }).then((res) => {
             console.log(res);
-            if (res.data.code === 500) {
-              this.$message.error(res.data.msg);
-            } else {
-              this.$message.success("登录成功");
-              this.$router.push("/plantList");
+            if(res.data.data.code === 500) {
+              this.$message.error(res.data.data.msg)
+            }else {
+              this.$message.success('登录成功')
+              this.$router.push('/plantList')
             }
           });
         } else {
@@ -183,8 +176,6 @@ export default {
 .content {
   width: 100vw;
   height: 100vh;
-
-  box-sizing: border-box;
   background-color: #c2e1fd;
 }
 .login-module {

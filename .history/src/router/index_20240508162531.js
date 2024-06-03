@@ -35,13 +35,13 @@ const routes = [
     children: [
       {
         path: '/adminHome',
-        name: '主页',
+        name: 'Hi! admin',
         component: adminHome,
         meta: {requireAuth: true},
         children: [
           {
             path: '/adminHome',
-            name: '介绍',
+            name: 'admin 主页',
             component: adminHome,
             meta: {requireAuth: true},
           }

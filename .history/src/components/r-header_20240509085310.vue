@@ -4,7 +4,7 @@
     <div>
       <el-button
         type="text"
-        style="color: #fff; font-size: 18px"
+        style="color: #333333; font-size: 18px"
         @click="out()"
       >
         退出登录

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246); height: 810px; border: 1px solid #eee">
+    <el-aside  style="background-color: rgb(238, 241, 246); border: 1px solid #eee">
       <el-menu router :default-active="this.$route.path">
         <div v-for="(item, index) in $router.options.routes" v-if="true" :index="index+''" :key="index">
           <el-submenu v-for="(item2, index2) in item.children" :index="item2.path" :key="item2.path">

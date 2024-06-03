@@ -1,10 +1,10 @@
 <template>
-  <div class="box">
-    <div class="title">植物世界管理后台</div>
+  <div>
+    <div>植物世界管理后台</div>
     <div>
       <el-button
         type="text"
-        style="color: #fff; font-size: 18px"
+        style="color: #333333; font-size: 18px"
         @click="out()"
       >
         退出登录
@@ -41,12 +41,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.box {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #fff;
-}
-</style>
+<style scoped></style>

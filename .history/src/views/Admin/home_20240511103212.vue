@@ -9,6 +9,7 @@
           <p><i class="el-icon-chat-round" style="margin-right: 18px"></i>开发时间: 2024/5/11</p>
        
         </el-card>
+        <logout></logout>
       </el-main>
     </el-container>
   </div>
